@@ -2,6 +2,12 @@
 
 	class ACF_Instructions_Helper {
 
+		public $default_args = array(
+			'activate_settings_page' => true,
+			'allowed_fields' => array(),
+			'allowed_users' => array()
+		);
+
 	 /**
 	  * An array of Fields and Instructions that will overwrite existing field instructions in the back end
 	  */
@@ -57,6 +63,12 @@
 			//	Get the Current Path to this Directory
 	  		$this->path_to_dir = substr( __DIR__, strpos( __DIR__, '/wp-content' ));
 
+	  		$args = array();
+
+	  		$args = apply_filters( 'acf_instructions_helper_args', $args );
+
+	  		$args = array_merge( $this->default_args, $args );
+
 			//	Enqueue ACF admin scripts and Styles
 			add_action('acf/input/admin_head', array( &$this, 'enqueue_admin_scripts' ));
 
@@ -67,24 +79,42 @@
 				$this->helper_instructions = array_merge( $this->helper_instructions, $acf_instructions );
 			}
 
-			$this->helper_instructions = apply_filters( 'acf_helper_instructions', $this->helper_instructions );
+			$this->helper_instructions = apply_filters( 'acf_instructions_helper', $this->helper_instructions );
 
-			//	Filter through all ACFs that load
-			add_filter('acf/load_field', array( &$this, 'filter_acf_fields') );
+			if( empty($args['allowed_fields']) ) {
 
-			//	Add Options Pages
-			if( function_exists('acf_add_options_sub_page') )
-			{
-				//acf_add_options_sub_page( 'ACF Helpers' );
-				acf_add_options_sub_page(array(
-			        'title' => 'ACF Instructions Helper',
-			        'parent' => 'options-general.php',
-			        'capability' => 'manage_options'
-			    ));
+				//	Filter through all ACFs that load
+				add_filter('acf/load_field', array( &$this, 'filter_acf_fields') );
+
+			} else {
+
+				foreach ( $args['allowed_fields'] as $key => $field_name) {
+					//	Filter through all ACFs that load
+					add_filter('acf/load_field/name={$field_name}', array( &$this, 'filter_acf_fields') );
+				}
 			}
 
-			//	Import any ACF fields needed
-			$this->import_acf_php_fields();
+			if( $args['activate_settings_page'] ) {
+
+				//	Add Options Pages
+				if( function_exists('acf_add_options_sub_page') )
+				{
+
+					//	User data
+					$user = wp_get_current_user();
+					$user_data = $user->data;
+
+					if( empty($args['allowed_users']) || in_array( $user->ID, $args['allowed_users'] ) || in_array( $user_data->user_login, $args['allowed_users'] ) )
+						acf_add_options_sub_page(array(
+					        'title' => 'ACF Instructions Helper',
+					        'parent' => 'options-general.php',
+					        'capability' => 'manage_options'
+					    ));
+				}
+
+				//	Import any ACF fields needed
+				$this->import_acf_php_fields();				
+			}
 
 		}
 
