@@ -9,6 +9,10 @@ This can be done from the back end of Wordpress (WP) or from within the theme fi
 
 The plugin can be uploaded and activated as a Wordpress plugin or the file `ACF_Instructions_Helper.php` can be included directly in the theme's function file.
 
+Initially the plugin will filter through any visible ACFs in the back end and wrap their existing instruction text in a hoverable helper button.
+
+If you require some more advanced control over what instruction text is displayed in certain fields then by all means, continue reading.
+
 ## Wordpress back end
 
 The settings page for this plugin will be accessible through `Settings > ACF Helpers` in the back end of WP.
