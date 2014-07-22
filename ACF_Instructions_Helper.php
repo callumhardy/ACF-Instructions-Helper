@@ -77,7 +77,7 @@
 			{
 				//acf_add_options_sub_page( 'ACF Helpers' );
 				acf_add_options_sub_page(array(
-			        'title' => 'ACF Helpers',
+			        'title' => 'ACF Instructions Helper',
 			        'parent' => 'options-general.php',
 			        'capability' => 'manage_options'
 			    ));
@@ -237,13 +237,13 @@
 
 		public function import_acf_php_fields() {
 
-	  		if(!$this->get_acf_field_group('Options: Helpers'))
+	  		if(!$this->get_acf_field_group('Options: ACF Instructions Helper'))
 	  		{
 	  			if(function_exists("register_field_group"))
 	  			{
 	  				register_field_group(array (
-	  					'id' => 'acf_options-helpers',
-	  					'title' => 'Options: Helpers',
+	  					'id' => 'acf_options-acf-instructions-helper',
+	  					'title' => 'Options: ACF Instructions Helper',
 	  					'fields' => array (
 	  						array (
 	  							'key' => 'field_53cd61add5ca0',
@@ -263,7 +263,7 @@
 	  											'label' => 'Instruction',
 	  											'name' => 'instruction',
 	  											'type' => 'wysiwyg',
-	  											'instructions' => '<p>The instruction you type here can be inserted into an ACF using the two fields below.</p><p>Test Instruction One</p><p>Filtered!</p>',
+	  											'instructions' => '<p>The instruction you type here can be inserted into an ACF using the two fields below.</p><p>Test Instruction One</p>',
 	  											'column_width' => '',
 	  											'default_value' => '',
 	  											'toolbar' => 'full',
@@ -334,7 +334,7 @@
 	  							array (
 	  								'param' => 'options_page',
 	  								'operator' => '==',
-	  								'value' => 'acf-options-acf-helpers',
+	  								'value' => 'acf-options-acf-instructions-helper',
 	  								'order_no' => 0,
 	  								'group_no' => 0,
 	  							),
@@ -349,6 +349,7 @@
 	  					'menu_order' => 0,
 	  				));
 	  			}
+
 
 
 	  		}

@@ -7,7 +7,7 @@ This can be done from the back end of Wordpress (WP) or from within the theme fi
 
 # Usage
 
-The plugin can be uploaded and activated as a Wordpress plugin or included directly in the theme by including `Description.php` in `functions.php`.
+The plugin can be uploaded and activated as a Wordpress plugin or the file `ACF_Instructions_Helper.php` can be included directly in the theme's function file.
 
 ## Wordpress back end
 
