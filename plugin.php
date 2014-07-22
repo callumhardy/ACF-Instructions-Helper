@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: ACF Description Helpers
+Plugin Name: ACF Instructions Helper
 Plugin URI:
 Description: This plugin will help you organise and alter Advanced Custom Field Instructions or Descriptions. This can be done from the back end of wordpress or from within the theme files using filters.
 Version: 1.0
@@ -13,7 +13,7 @@ License: GPL
 //	Initialise the plugin after all plugins are loaded
 //	Need to be sure ACF is loaded before we use Elliots sweet sweet functions now don't we!?
 add_action( 'plugins_loaded', function(){
-	include('Descriptions.php');
+	include('ACF_Instructions_Helper.php');
 });
 
 $plugin_file = 'acf-descriptions/plugin.php';

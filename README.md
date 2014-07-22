@@ -1,5 +1,5 @@
 
-# ACF Descriptions
+# ACF Instructions Helper
 
 This plugin will help you organise and alter Advanced Custom Field (ACF) Instructions or Descriptions. 
 

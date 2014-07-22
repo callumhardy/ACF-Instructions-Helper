@@ -1,6 +1,6 @@
 <?php
 
-	class ACF_Descriptions {
+	class ACF_Instructions_Helper {
 
 	 /**
 	  * An array of Fields and Instructions that will overwrite existing field instructions in the Content Blocks
@@ -98,13 +98,13 @@
 
 		public function enqueue_admin_scripts() {
 
-			//	acf-description js
-			wp_register_script( 'acf-description-js', $this->path_to_dir . '/assets/js/acf-descriptions.js', array( 'jquery' ) );
-			wp_enqueue_script( 'acf-description-js' );
+			//	acf-instructions-helper js
+			wp_register_script( 'acf-instructions-helper-js', $this->path_to_dir . '/assets/js/acf-instructions-helper.js', array( 'jquery' ) );
+			wp_enqueue_script( 'acf-instructions-helper-js' );
 
-			//	acf-description css
-			wp_register_style( 'acf-descriptions-css', $this->path_to_dir . '/assets/css/acf-descriptions.css', '', '', 'screen' );
-	        wp_enqueue_style( 'acf-descriptions-css' );
+			//	acf-instructions-helper css
+			wp_register_style( 'acf-instructions-helpers-css', $this->path_to_dir . '/assets/css/acf-instructions-helper.css', '', '', 'screen' );
+	        wp_enqueue_style( 'acf-instructions-helpers-css' );
 
 		}
 
@@ -356,6 +356,6 @@
 
 	}
 
-	ACF_Descriptions::create()->init();
+	ACF_Instructions_Helper::create()->init();
 
 	
