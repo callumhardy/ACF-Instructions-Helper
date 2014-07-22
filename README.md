@@ -21,9 +21,21 @@ There you will find instructions on creating and editing ACF instructions and de
 
 ## Filters
 
-**acf_instructions_helper_args**
+### ACF instruction helper args
 
-### acf_instructions_helper_args Parameters
+`acf_instructions_helper_args`
+
+	function filter_function_name( $args ) {
+	  // Do user manipulation here
+	  return $args;
+	}
+	add_filter( 'acf_instructions_helper_args', 'filter_function_name', 10, 2 );
+
+**$args**
+
+> (*array*) The current config arguments for the plugin
+
+#### acf_instructions_helper_args Parameters
 
 **$activate_settings_page**
 
@@ -37,9 +49,21 @@ There you will find instructions on creating and editing ACF instructions and de
 
 > (*int*/*string*) You may restrict who can view the Settings page if it is set to display by entering IDs or usernames here. Only users whos ID or username appears in this array can see the settings page. By default the array is empty and so restricts no users at all.
 
-**acf_instructions_helper**
+### ACF instruction helper
 
-If the back end page isn't your style you may adjust or add ACF instructions using the `acf_helper_instructions` filter.
+`acf_instructions_helper`
+
+If the back end page isn't your style you may adjust or add ACF instructions using this filter.
+
+	function filter_function_name( $instructions ) {
+	  // Do user manipulation here
+	  return $instructions;
+	}
+	add_filter( 'acf_instructions_helper', 'filter_function_name', 10, 2 );
+
+**$instructions**
+
+> (*array*) The current instructions array
 
 ### acf_instructions_helper Parameters
 
