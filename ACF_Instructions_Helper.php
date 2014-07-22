@@ -3,7 +3,7 @@
 	class ACF_Instructions_Helper {
 
 	 /**
-	  * An array of Fields and Instructions that will overwrite existing field instructions in the Content Blocks
+	  * An array of Fields and Instructions that will overwrite existing field instructions in the back end
 	  */
 		public $helper_instructions = array(
 
@@ -47,7 +47,7 @@
 	 /**
 	  * -> init()
 	  *
-	  * Initialise the setup for the Content Blocks
+	  * Initialise the setup for the ACF_Instructions_Helper
 	  * 
 	  * @return string
 	  */
@@ -230,7 +230,7 @@
 	 /**
 	  * import_acf_php_fields()
 	  *
-	  * Imports some basic ACFs to construct the Content Blocks Toggle button in the back end
+	  * Imports some basic ACFs to construct the Instruction Helpers Toggle buttons in the back end
 	  * 
 	  * @return void
 	  */
