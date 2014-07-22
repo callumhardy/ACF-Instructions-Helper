@@ -79,7 +79,7 @@
 				$this->helper_instructions = array_merge( $this->helper_instructions, $acf_instructions );
 			}
 
-			$this->helper_instructions = apply_filters( 'acf_instructions_helper', $this->helper_instructions );
+			$this->helper_instructions = apply_filters( 'acf_instructions', $this->helper_instructions );
 
 			if( empty($args['allowed_fields']) ) {
 

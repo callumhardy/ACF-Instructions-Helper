@@ -21,9 +21,7 @@ There you will find instructions on creating and editing ACF instructions and de
 
 ## Filters
 
-### ACF instruction helper args
-
-`acf_instructions_helper_args`
+### acf_instructions_helper_args
 
 	function filter_function_name( $args ) {
 	  // Do user manipulation here
@@ -49,9 +47,7 @@ There you will find instructions on creating and editing ACF instructions and de
 
 > (*int*/*string*) You may restrict who can view the Settings page if it is set to display by entering IDs or usernames here. Only users whos ID or username appears in this array can see the settings page. By default the array is empty and so restricts no users at all.
 
-### ACF instruction helper
-
-`acf_instructions_helper`
+### acf_instructions
 
 If the back end page isn't your style you may adjust or add ACF instructions using this filter.
 
@@ -59,13 +55,13 @@ If the back end page isn't your style you may adjust or add ACF instructions usi
 	  // Do user manipulation here
 	  return $instructions;
 	}
-	add_filter( 'acf_instructions_helper', 'filter_function_name', 10, 2 );
+	add_filter( 'acf_instructions', 'filter_function_name', 10, 2 );
 
 **$instructions**
 
 > (*array*) The current instructions array
 
-### acf_instructions_helper Parameters
+### acf_instructions Parameters
 
 **$instruction**
 
@@ -125,7 +121,7 @@ Below we are adding an instruction to the `$instructions` array.
 
 The instruction that is being added is set to **overwrite** any previous instructions found in any ACFs with the name `foo` or `bar` and that also have a parent ACF that is named `hello` or `world`.
 
-	add_filter( 'acf_instructions_helper', function( $instructions ){
+	add_filter( 'acf_instructions', function( $instructions ){
 		
 		$instructions[] = array(
 			'instruction' => '<p>Filtered instruction text!</p>',
