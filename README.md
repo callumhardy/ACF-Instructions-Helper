@@ -18,19 +18,30 @@ If you require some more advanced control over what instruction text is displaye
 The settings page for this plugin will be accessible through `Settings > ACF Helpers` in the back end of WP.
 
 There you will find instructions on creating and editing ACF instructions and description.
-## Parameters
-
-**$activate_settings_page** (*bool*) Set whether to display the settings page in the back end. Default: `true`
-
-**$allowed_fields** (*array*) Entering a Repeater or Flexible content Field Name here will only let the plugin effect fields inside them and will leave other ACFs alone. If you want to be really specific you can target individual fields as well. By default this array is empty and the plugin will effect all ACFs.
-
-**$allowed_users** (*int*/*string*) You may restrict who can view the Settings page if it is set to display by entering IDs or usernames here. Only users whos ID or username appears in this array can see the settings page. By default the array is empty and so restricts no users at all.
 
 ## Filters
 
+**acf_instructions_helper_args**
+
+### acf_instructions_helper_args Parameters
+
+**$activate_settings_page**
+
+> (*bool*) Set whether to display the settings page in the back end. Default: `true`
+
+**$allowed_fields**
+
+> (*array*) Entering a Repeater or Flexible content Field Name here will only let the plugin effect fields inside them and will leave other ACFs alone. If you want to be really specific you can target individual fields as well. By default this array is empty and the plugin will effect all ACFs.
+
+**$allowed_users**
+
+> (*int*/*string*) You may restrict who can view the Settings page if it is set to display by entering IDs or usernames here. Only users whos ID or username appears in this array can see the settings page. By default the array is empty and so restricts no users at all.
+
+**acf_instructions_helper**
+
 If the back end page isn't your style you may adjust or add ACF instructions using the `acf_helper_instructions` filter.
 
-### Filter Parameters
+### acf_instructions_helper Parameters
 
 **$instruction**
 
@@ -52,11 +63,11 @@ If the back end page isn't your style you may adjust or add ACF instructions usi
 
 # Examples
 
-## Disabling the Back end settings page
+## Disabling the back end settings page
 
 Here we are adjusting the defualt arguments of the plugin.
 
-Setting `activate_settings_page` will stop the settings page from displaying in the backend for all users 
+Setting `activate_settings_page` to false will stop the settings page from displaying in the backend for all users 
 
 	add_filter( 'acf_instructions_helper_args',function( $args ){
 		
