@@ -45,15 +45,15 @@ If the back end page isn't your style you may adjust or add ACF instructions usi
 
 Below we are adding an instruction to the `$helper_instructions` array.
 
-The instruction that is being added is set to **overwrite** any previous instructions found in any ACFs with the name `foo` that also have a parent ACF that is named `bar`.
+The instruction that is being added is set to **overwrite** any previous instructions found in any ACFs with the name `foo` or `bar` and that also have a parent ACF that is named `hello` or `world`.
 
 	add_filter( 'acf_helper_instructions', function( $helper_instructions ){
 		
 		$helper_instructions[] = array(
-			"instruction" => "<p>Filtered instruction text!</p>",
-			"settings" => array('overwrite'),
-			"field_name" => array('foo'),
-			"field_parent" => array('bar')
+			'instruction' => '<p>Filtered instruction text!</p>',
+			'settings' => array('overwrite'),
+			'field_name' => array('foo','bar'),
+			'field_parent' => array('hello','world')
 		);
 
 		return $helper_instructions;
