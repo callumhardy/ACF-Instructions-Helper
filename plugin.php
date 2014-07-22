@@ -16,7 +16,7 @@ add_action( 'plugins_loaded', function(){
 	include('ACF_Instructions_Helper.php');
 });
 
-$plugin_file = 'acf-descriptions/plugin.php';
+$plugin_file = 'acf-instructions-helper/plugin.php';
  
 //	Adding a 'Settings" link o the WP Plugin page for this plugin'
 function acf_descriptions_plugin_links( $links, $file ) {
