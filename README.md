@@ -134,4 +134,10 @@ The instruction that is being added is set to **overwrite** any previous instruc
 
 	});
 
+# Dependencies
+
+There are two dependent plugins.
+
+- [Advanced Custom Fields](http://wordpress.org/plugins/advanced-custom-fields/)
+- [ACF Options Page](http://www.advancedcustomfields.com/add-ons/options-page/)
 
