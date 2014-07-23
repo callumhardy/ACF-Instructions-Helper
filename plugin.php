@@ -12,7 +12,7 @@ License: GPL
 
 //	Initialise the plugin after all plugins are loaded
 //	Need to be sure ACF is loaded before we use Elliots sweet sweet functions now don't we!?
-add_action( 'plugins_loaded', function(){
+add_action( 'after_setup_theme', function(){
 	include('ACF_Instructions_Helper.php');
 });
 
