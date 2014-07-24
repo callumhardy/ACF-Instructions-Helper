@@ -18,12 +18,12 @@ add_action( 'after_setup_theme', function(){
 
 $plugin_file = 'acf-instructions-helper/plugin.php';
  
-//	Adding a 'Settings" link o the WP Plugin page for this plugin'
-function acf_descriptions_plugin_links( $links, $file ) {
+//	Adding a 'Settings" link to the WP Plugin page for this plugin
+function acf_instructions_plugin_links( $links, $file ) {
 	$settings_link = '<a href="' . admin_url( 'admin.php/options-general.php?page=acf-options-acf-helpers' ) . '">' . __( 'Settings', 'content-split-pro' ) . '</a>';
 	array_unshift( $links, $settings_link );
  
 	return $links;
 }
 
-add_filter( "plugin_action_links_{$plugin_file}", 'acf_descriptions_plugin_links', 10, 2 );
+add_filter( "plugin_action_links_{$plugin_file}", 'acf_instructions_plugin_links', 10, 2 );
