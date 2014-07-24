@@ -23,11 +23,13 @@ There you will find instructions on creating and editing ACF instructions and de
 
 ### acf_instructions_helper_args
 
+This filter allows you to alter the default plugin arguments
+
 	function filter_function_name( $args ) {
 	  // Do user manipulation here
 	  return $args;
 	}
-	add_filter( 'acf_instructions_helper_args', 'filter_function_name', 10, 2 );
+	add_filter( 'acf_instructions_helper_args', 'filter_function_name' );
 
 **$args**
 
@@ -55,7 +57,7 @@ If the back end page isn't your style you may adjust or add ACF instructions usi
 	  // Do user manipulation here
 	  return $instructions;
 	}
-	add_filter( 'acf_instructions', 'filter_function_name', 10, 2 );
+	add_filter( 'acf_instructions', 'filter_function_name' );
 
 **$instructions**
 
