@@ -81,7 +81,7 @@ If the back end page isn't your style you may adjust or add ACF instructions usi
 
 **$field_parent**
 
-> (*array*)(*optional*) An array of ACF names that the targeted ACF must have as a parent field. This will always be either a Repeater field, Flexible Content field or the layout of a Flexible Content Field . The names must be the 'slug' like version of the ACF name. EG: they must have be lower-case letters with underscores.
+> (*array*)(*optional*) An array of ACF names that the targeted ACF must have as a parent field. This will always be either a Repeater field, Flexible Content field or the layout of a Flexible Content Field . The names must be the 'slug' like version of the ACF name. EG: they must be lower-case letters with underscores.
 
 # Examples
 
@@ -105,7 +105,7 @@ Setting `activate_settings_page` to false will stop the settings page from displ
 
 Since the options on the settings page are usually of little use to a client. It might be a good idea to only let certain users see the settings page at all.
 
-Here we are setting the plugin to only display the settings page for a user with an id or '1' or a user name of 'admin'.
+Here we are setting the plugin to only display the settings page for a user with an id of '1' or a user name of 'admin'.
 
 	add_filter( 'acf_instructions_helper_args',function( $args ){
 		
